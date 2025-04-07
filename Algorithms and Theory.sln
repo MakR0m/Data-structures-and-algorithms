@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Structures", "Arrays\Structures.csproj", "{771AE613-9FD0-488B-95D7-8D89DDBE3706}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulues types and Reference types", "Vulues types and Reference types\Vulues types and Reference types.csproj", "{B325F2AC-F8BB-43D4-86D6-1471D8A096EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{771AE613-9FD0-488B-95D7-8D89DDBE3706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771AE613-9FD0-488B-95D7-8D89DDBE3706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{771AE613-9FD0-488B-95D7-8D89DDBE3706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B325F2AC-F8BB-43D4-86D6-1471D8A096EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B325F2AC-F8BB-43D4-86D6-1471D8A096EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B325F2AC-F8BB-43D4-86D6-1471D8A096EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B325F2AC-F8BB-43D4-86D6-1471D8A096EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
