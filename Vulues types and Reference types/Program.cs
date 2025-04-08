@@ -3,6 +3,7 @@ using System.Text;
 
 namespace Vulues_types_and_Reference_types
 {
+    #region сложные типы данных
     //Когда использовать класс, когда рекорд, когда стракт
     // enum — если значения ограничены и логически предопределены (дни недели, статусы, роли, флаги и т.п.)
     // struct — если объект: маленький, часто копируется, не требует ссылочного поведения (координаты, цвета, временные точки)
@@ -43,7 +44,8 @@ namespace Vulues_types_and_Reference_types
         public int Age;                //Используется везде, где есть сложная логика или изменяемые данные
     }
 
-
+    #endregion
+    
     internal class Program
     {
         static void Main(string[] args)
@@ -53,8 +55,9 @@ namespace Vulues_types_and_Reference_types
             Nullable();
             ClassStructRecord();
             BoxUnbox();
-
+            CollectionInterfaces();
         }
+
 
         private static void TypesAndStringWork()
         {
@@ -224,6 +227,19 @@ namespace Vulues_types_and_Reference_types
             //object o = 42; Unboxing требует точного указания типа, какой тип запаковали, тот и должны указать при распаковке, иначе ошибка.
             //int x = (int)o;    ✅
             //long y = (long)o;  ❌ InvalidCastException
+        }
+        
+        private static void CollectionInterfaces()
+        {
+            IEnumerable<int> list = new List<int>() { 1 }; // Не наследуется ни от кого и позволяет перебирать элементы. Основной интерфейс LINQ. Когда нужно вернуть "только для чтения"
+            ICollection<int> list2 = new List<int>(); // Наследуется от IEnumerable<T> + кол-во, добавление и удаление (базовые операции с коллекцией). Когда нужны добавление/удаление
+            IList<int> list3 = new List<int>(); // Наследуется от ICollection<T> + доступ по индексу. Когда нужна логика, основанная на позициях
+
+            foreach (int i in list)  // GetEnumerator -> foreach
+                Console.WriteLine(i);
+
+            //Зачем разные интерфейсы? → Чем меньше обязанностей у типа, тем гибче код. Интерфейсы позволяют передавать только необходимые возможности.
+
         }
     }
 }
