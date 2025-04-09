@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulues types and Reference 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFlowAndLINQ", "DataFlowAndLINQ\DataFlowAndLINQ.csproj", "{FB8199D5-D866-41E9-BE99-255F21E0EF9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{2872F2B0-71C4-4117-A1F6-B3F87F2D1056}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FB8199D5-D866-41E9-BE99-255F21E0EF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB8199D5-D866-41E9-BE99-255F21E0EF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB8199D5-D866-41E9-BE99-255F21E0EF9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2872F2B0-71C4-4117-A1F6-B3F87F2D1056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2872F2B0-71C4-4117-A1F6-B3F87F2D1056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2872F2B0-71C4-4117-A1F6-B3F87F2D1056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2872F2B0-71C4-4117-A1F6-B3F87F2D1056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
