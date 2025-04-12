@@ -1,4 +1,6 @@
-﻿namespace Algorithms
+﻿using System.Collections.Concurrent;
+
+namespace Algorithms
 {
     internal class Program
     {
@@ -21,6 +23,13 @@
             BubbleSort(arr1);
             int[] arr2 = { 5, 15, 1, 74, 2, 10 };
             InsertionSort(arr2);
+            int[] arr3 = { 5, 15, 1, 74, 2, 10 };
+            QuickSort(arr3, 0, arr.Length-1);
+
+            int[] data = { 8, 3, 5, 1, 4 };
+            int[] sorted = MergeSort(data);
+
+            Console.WriteLine(string.Join(",", sorted)); // Первый параметр - разделитель. Второй коллекция. Джойн перебирает элементы коллекции, выводит и соединяет разделителем.  Использует стрингбилдер
         }
 
         
@@ -123,6 +132,84 @@
                 }
                 ints[j+1] = current;
             }
+        }
+
+        private static void QuickSort(int[] array, int left, int right)
+        {
+            if (left >= right)
+                return;
+
+            int pivot = array[(left + right) / 2];
+            int index = Partition(array, left, right, pivot);
+            QuickSort(array, left, index - 1);
+            QuickSort(array, index, right);
+        }
+
+        private static int Partition(int[] array, int left, int right, int pivot)
+        {
+            while (left <= right)
+            {
+                while (array[left] < pivot) left++;
+                while (array[right] > pivot) right--;
+
+                if (left <= right)
+                {
+                    (array[left], array[right]) = (array[right], array[left]);
+                    left++;
+                    right--;
+                }
+            }
+            return left;
+        }
+
+        private static int[] MergeSort (int[] array)
+        {
+            // Базовый случай: 0 или 1 элемент — массив уже отсортирован
+            if (array.Length <= 1)
+                return array;
+
+            // Находим середину
+            int mid = array.Length / 2;
+
+            // Разделяем массив на левую и правую части
+            int[] left = array[..mid];  // вырезает подмассив
+            int[] right = array[mid..];
+
+            // Рекурсивно сортируем каждую часть
+            int[] sortedLeft = MergeSort(left);
+            int[] sortedRight = MergeSort(right);
+
+            // Объединяем отсортированные части
+            return Merge(sortedLeft, sortedRight);
+
+        }
+
+        private static int[] Merge(int[] left, int[] right)
+        {
+            int[] result = new int[left.Length + right.Length];
+            int i = 0, l = 0, r = 0;
+
+            // Пока в обоих массивах есть элементы
+            while (l < left.Length && r < right.Length)
+            {
+                if (left[l] < right[r])
+                {
+                    result[i++] = left[l++];
+                }
+                else
+                {
+                    result[i++] = right[r++];
+                }
+            }
+
+            // Добавляем оставшиеся элементы (если остались)
+            while (l < left.Length)
+                result[i++] = left[l++];
+
+            while (r < right.Length)
+                result[i++] = right[r++];
+
+            return result;
         }
 
     }
